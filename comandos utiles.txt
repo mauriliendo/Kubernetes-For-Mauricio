@@ -1,0 +1,22 @@
+kubectl get pods -o wide
+kubectl get nodes -o wide
+kubectl describe pods (se puede add nombre del pods)
+kubectl api-resources
+kubectl get all
+metallb para instalar load balancer localmente
+kubectl port-forward nginx-pod 8080:80 --address 0.0.0.0  (para fowardear puerto)
+k expose rs my-helloword-rs --type LoadBalancer --port=80 --target=8080 --name=my-helloword-rs-service (exponer un replicaset)
+k expose pod my-helloword-pod --type LoadBalancer --port=80 --name=my-first-pod
+k get pods "nombre-del-pod" -o yaml > xnombre.yaml (para hacer un backup y tener en caso de que se rompa todo)
+k get service "nombre-del-svc" -o yaml > xnombre.yaml
+set-alias -name k -value kubectl
+kubectl get service "name-service" --watch  (para ver la ip publica)
+k scale --replicas=10 deploy/my-first-deploy (escalar de forma manual sin entrar al manifiesto)
+k rollout undo deploy/my-first-deploy (volver atras el cambio)
+k rollout undo deploy/my-first-deploy --to-revision=4 (antes tirar el rollout history y te fijas que revision queres volver)
+kubectl rollout pause deployment/my-first-deployment (para pausar el deploy y hacer varios cambios)
+kubectl rollout resume deployment/my-first-deployment (volver activarlo)
+kubectl edit deployment/my-first-deployment --record=true (editar directamente y se aplican los cambios solos)
+k autoscale deployment "nombre del deploy" --cpu-percent=50 --min=3 --max=10
+----------
+kubectl run -it --rm --image=mysql:5.6 --restart=Never mysql-client -- mysql -h mysql -pdbpassword11 (conectarse a una base de datos)

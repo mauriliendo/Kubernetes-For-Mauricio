@@ -1,0 +1,17 @@
+app Velero para hacer backup a la base de datos 
+killercoda ??? para practicar kubernet
+
+clase que viene instalar 
+kubectl
+awscli
+readiness probe ??? para ver si un pod esta listo
+
+kubectl get ns default -o YAML
+
+liveness y readiness .. buscar pelado nerd
+caos binario (nana)
+ 
+-dockerhub
+-quay.io (registry RedHat)
+-acr azure
+s

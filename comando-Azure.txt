@@ -1,0 +1,21 @@
+loggin:
+az account set --subscription 3e3204b7-522e-4c6d-9765-58a846673541  
+
+az aks get-credentials --resource-group mauricioliendo_rg --name mliendoaks  (nombre del resource group y nombre del claster) este comando es para
+administrar un cluster en particular, si queres admin otro volves a tirar el comando
+
+kubectl apply -f azure-vote-all-in-one-redis.yaml
+
+kubectl get service azure-vote-front --watch  (para ver la ip publica)
+
+kubectl cluster-info
+kubectl get nodes -o wide
+kubectl config view
+kubectl config current-context  (para ver el nombre del cluster)
+kubectl config use-context mliendoaks (para switchear a ese cluster)
+
+az aks update --resource-group mauricioliendo_rg --name mliendoaks --enable-cluster-autoscaler --min-count 2 --max-count 5
+(para autoescalar los nodos, cada 10 seg checkea y autoscala)
+
+kubectl delete all --all
+az aks stop -n mliendoaks -g mauricioliendo_rg

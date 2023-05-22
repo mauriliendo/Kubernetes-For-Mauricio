@@ -1,8 +1,8 @@
 kubectl get pods -o wide
-kubectl get nodes -o wide
 kubectl describe pods (se puede add nombre del pods)
-kubectl api-resources
-kubectl get all
+kubectl api-resources (para armar los manifiestos y poner correctamente la api version)
+Kubectl -n nombredelnamesapce get all (para ver sobre un ns espesifico)
+kubectl get ing (para ver el ingress)
 metallb para instalar load balancer localmente
 kubectl port-forward nginx-pod 8080:80 --address 0.0.0.0  (para fowardear puerto)
 k expose rs my-helloword-rs --type LoadBalancer --port=80 --target=8080 --name=my-helloword-rs-service (exponer un replicaset)

@@ -4,6 +4,10 @@ az account set --subscription 3e3204b7-522e-4c6d-9765-58a846673541
 az aks get-credentials --resource-group mauricioliendo_rg --name mliendoaks  (nombre del resource group y nombre del claster) este comando es para
 administrar un cluster en particular, si queres admin otro volves a tirar el comando
 
+az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --output table
+
+az aks show --resource-group mauricioliendo_rg --name akstest --query nodeResourceGroup -o tsv  (para ver el nombre del rg del aks)
+
 kubectl apply -f azure-vote-all-in-one-redis.yaml
 
 kubectl get service azure-vote-front --watch  (para ver la ip publica)
@@ -19,3 +23,12 @@ az aks update --resource-group mauricioliendo_rg --name mliendoaks --enable-clus
 
 kubectl delete all --all
 az aks stop -n mliendoaks -g mauricioliendo_rg
+
+Lens: https://www.youtube.com/watch?v=DFMKc...
+Minikube: https://minikube.sigs.k8s.io/docs/start/
+Kind: https://kind.sigs.k8s.io/
+Supervisord: https://www.youtube.com/watch?v=mfXnq...
+Helm: https://www.youtube.com/watch?v=CPjfb...
+Ingress: https://kubernetes.io/docs/concepts/s...
+KubeSealed: https://www.youtube.com/watch?v=YuKAi...
+ENV (Variables de Entorno): https://www.youtube.com/watch?v=T7lRH...
